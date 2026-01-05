@@ -1,3 +1,5 @@
+import { IMAGES } from "../assets";
+
 export const LOGIN_CONFIG = {
   email: {
     label: "Email",
@@ -40,5 +42,6 @@ export const AUTH_UI = {
     highlight: "AI-Powered Learning",
     subtitle: "110k+ learners trust our AI platform worldwide",
     footer: "Learning becomes enjoyable when you join Educa AI",
+    images:IMAGES.HERO,
   },
 };

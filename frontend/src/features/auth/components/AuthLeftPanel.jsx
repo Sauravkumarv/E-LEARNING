@@ -1,12 +1,17 @@
 import { AUTH_UI } from "../../../config/authConfig";
 import { BRANDING } from "../../../config/branding.config";
 
+
 export default function AuthLeftPanel() {
   const { title, highlight, subtitle, footer } = AUTH_UI.leftPanel;
 
   return (
     <div className="flex flex-col justify-between h-full">
       
+<div>
+  <img src={BRANDING.logo} alt="Logo" className="w-40 mb-8" />
+</div>
+
       <div>
         <h1 className="text-4xl font-extrabold leading-tight">
           {title}
