@@ -1,7 +1,9 @@
+import apiClient from "../../../config/axios.config"
+
 export const signupApi=(data)=>{
-  return axios.post("auth/signup",data)
+  return apiClient.post("/auth/signup",data)
 }
 
 export const loginApi=(data)=>{
-  return axios.post("auth/login",data)
+  return apiClient.post("/auth/login",data)
 }

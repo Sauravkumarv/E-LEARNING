@@ -16,7 +16,7 @@ const Login = () => {
         <form
           onSubmit={login}
           className="w-full max-w-md bg-white 
-          p-8 rounded-xl shadow-lg"
+          p-8 rounded-xl shadow-lg "
         >
           <h2 className="text-2xl font-semibold mb-6 text-center">
             Login

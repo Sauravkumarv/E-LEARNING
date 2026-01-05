@@ -1,12 +1,20 @@
 import express, { json, urlencoded } from 'express'
 import { dbConnect } from './config/dbConnect.js';
 import router from './routes/user.js';
+import cors from 'cors'
 
 const app=express();
 dbConnect();
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());
+
+app.use(cors({
+  origin: process.env.FRONTEND_URL,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  credentials: true
+}));
+
 
 // app.use('/',(req,res)=>{
 //   res.send("Hey Health Check Goood")
