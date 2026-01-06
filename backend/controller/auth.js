@@ -1,4 +1,4 @@
-import { USER } from "../model/user.js";
+import { User } from "../model/user.js";
 import validator from "validator";
 import crypto from "crypto";
 
@@ -23,12 +23,12 @@ export const register = async (req, res) => {
     }
     // console.log(req.body)
 
-    const user = await USER.findOne({ email });
+    const user = await User.findOne({ email });
     if (user!=null) {
       return res.status(400).json({ message: "User already Exists" });
     }
 
-    const newUser = await USER.create({
+    const newUser = await User.create({
       username,
       email,
       password,
@@ -62,7 +62,7 @@ export const login = async (req, res) => {
       });
     }
 
-    const user = await USER.findOne({ email });
+    const user = await User.findOne({ email });
     if (!user) {
       return res.status(401).json({
         message: "Invalid credentials",
@@ -144,7 +144,7 @@ export const forgotPassword = async (req, res) => {
       return res.status(400).json({ message: "Email is required" });
     }
 
-    const user = await USER.findOne({ email });
+    const user = await User.findOne({ email });
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
@@ -209,7 +209,7 @@ export const resetPassword = async (req, res) => {
       .update(resetToken)
       .digest("hex");
 
-    const user = await USER.findOne({
+    const user = await User.findOne({
       resetPasswordToken: hashedToken,
       resetPasswordExpire: { $gt: Date.now() },
     });
