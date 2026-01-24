@@ -1,5 +1,5 @@
-import { BRANDING } from "../../config/branding.config";
-import { COLOR_MAP } from "../../config/colorMap.config";
+import { BRANDING } from "../../../../config/branding.config";
+import { COLOR_MAP } from "../../../../config/colorMap.config";
 
 
 export default function Button({
