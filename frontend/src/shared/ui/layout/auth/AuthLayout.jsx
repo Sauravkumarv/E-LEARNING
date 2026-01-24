@@ -1,4 +1,4 @@
-import { BRANDING } from "../../../config/branding.config";
+import { BRANDING } from "../../../../config/branding.config";
 
 export default function AuthLayout({ left, right }) {
   return (
